@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+   
+    <meta http-equiv="X-UA-Compatibile" content="IE=edge">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> 
+    
+    <title>
+        {% block titulo %}
+        {% endblock %}
+   
+    </title>
+     <!--Define o título da página.-->
+</head>
+<body>
+    <nav class="navbar">
+        <!--Cria uma barra de navegação.-->
+        <div class="container">
+            <!---->
+            <div class="container">
+                <!---->
+                <a class="navbar-brand" href="{{url_for('pagina_inicial')}}">Pagina inicial</a>
+                <!--Cria um link para a página inicial.-->
+                <a class="navbar-brand1"  href="{{url_for('pagina_aluno')}}">Aluno</a>
+                
+                <a class="navbar-brand2" href="{{url_for('pagina_informacoes')}}">Informações</a>
+                <!--Cria um link para a página de informações.-->
+                <button class="navbar-toggler" type="button">
+                    <!--Cria um botão de alternância para a barra de navegação.-->
+                    <span class="navbar-toggler-icon"></span>
+                    <!---->
+                </button>
+                <!---->
+                <div class="navbar-collapse">
+                    <!---->
+                    </div>
+                    <!---->
+            </div>
+            <!---->
+                <div class="navbar-nav">
+                    <!---->
+                    <a class="nav-link" href="{{url_for('pagina_login')}}">Login</a>
+                    <!--Cria um link para a página de login.-->
+                    <a class="nav-link" href="{{url_for('pagina_cadastro')}}">Cadastro</a>
+                    <!--Cria um link para a página de cadastro.-->
+                </div>
+            </div>
+        </div>
+        <div class="navbar-nav">
+           
+        
+            
+        </div>
+    </nav>
+    {%block conteudo%}
+
+    {% endblock %}
+   
+</body>
+</html>

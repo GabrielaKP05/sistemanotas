@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Login</title>
+</head>
+<body style="text-align: center;font-size: 25px;font-family: Segoe UI;">
+    <div>
+        <img class="imgdauphin" src="{{url_for('static', filename='dauphin.gif')}}">
+        <h1 style="text-align: center; font-size: 25px; font-family: Segoe UI;">Sistema de Notas</h1>
+
+        <form method="POST" action="/validalogin{{id}}">
+            <div>
+                <input class="inputlogin" type="text" name="nome_aluno" placeholder="Nome de aluno">
+            </div>
+            <div>
+                <input style="margin: 10px" class="inputlogin" type="password" name="senha" placeholder="Senha">
+            </div>
+
+            <button type="submit" class="botaologin">Entrar</button>
+            <!-- <div style="margin: 10px">
+                <button type="submit" class="botaologin">Esqueci minha senha</button>
+            </div>
+            <div style="margin: 10px">
+                <button type="submit" class="botaologin">Solicitar conta</button>
+            </div> -->
+            
+        </form>
+        {% set flashed_messages = get_flashed_messages() %}
+        {% if mensagens%}
+           <div class="msg-alertas">
+            {%for msg in mensagens%}
+            <span class="ms erro"><i class="icon icon-hand-paper-o"></i>{{(msg)}}</span>
+        </div>
+        {%endfor%}
+
+    {%endif%}
+
+    </div>
+</body>
+</html>

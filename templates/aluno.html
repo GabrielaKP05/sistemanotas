@@ -1,0 +1,37 @@
+{% extends "template.html" %}
+{%block titulo%}
+Alunos
+{%endblock%}
+{% block conteudo%}
+   
+    <h2 style="text-align: center; font-size: 25px; font-family: Segoe UI;">Alunos</h2>
+   
+    <table>
+      <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Senha</th>
+          </tr>
+      </thead>
+
+      <tbody>
+          {% for aluno in alunos %}
+              <tr>
+                  <td>{{ aluno[1] }}</td>
+                  <td>{{ aluno[2] }}</td>
+                  <td>{{ aluno[3] }}</td>
+                  <td>
+                    <a href="/excluir_aluno/{{ aluno[0]}}" class="excluir">Excluir</a>
+                    <!-- <a href="/excluir_aluno/{{ aluno[0]}}" class="editar">Editar</a> -->
+                  
+                </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+    <div class="divimg">
+        <img class="imgdauphin" src="{{url_for('static', filename='dauphin.gif')}}">
+              </div>
+            
+{%endblock%}

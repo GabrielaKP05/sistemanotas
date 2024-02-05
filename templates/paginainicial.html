@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+{%block titulo%}
+Página inicial
+{%endblock%}
+{% block conteudo%}
+  <h2 style="text-align: center; font-size: 25px; font-family: Segoe UI;">Bem vindo</h2>
+    <!--Cria um título de nível 2-->
+    <hr>
+    <!--Cria uma linha horizontal.-->
+    
+    <div class="divimg">
+        <img class="imgpython" src="{{url_for('static', filename='dauphin.gif')}}">
+        <!--Cria uma imagem.-->
+      </div>
+{%endblock%}

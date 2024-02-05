@@ -1,0 +1,52 @@
+{% extends "template.html" %}
+{%block titulo%}
+Informações
+{%endblock%}
+{% block conteudo%}
+   
+    <h2 style="text-align: center; font-size: 25px; font-family: Segoe UI;">Tabela de informações</h2>
+
+    <table>
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Professor</th>
+              <th>Turma</th>
+              <th>Matérias</th>
+              
+              <th>Aluno</th>
+        
+          </tr>
+      </thead>
+      <tbody>
+          {% for informacao in informacoes %}
+              <tr>
+                  <td>{{ informacao[0] }}</td>
+                  <td>{{ informacao[1] }}</td>
+                  <!-- {% if informacao[3] == none %}
+                  <td>{{""}}</td>
+                  {%else %} -->
+                  <td>{{ informacao[2] }}</td>
+                    <!-- {% endif %} -->
+                  <td>{{ informacao[3] }}</td>
+                  <td>{{ informacao[4] }}</td>
+                  
+                  <td>
+                    {% if informacao[10] == 0%}
+                    <button class="editar">Vizualizar</button>
+                    {%else%}
+                    <button>Em vizualização</button>
+                    {% endif %}
+
+                  </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+    <div class="divimg">
+        <img class="imgdauphin" src="{{url_for('static', filename='dauphin.gif')}}">
+        <!--Cria uma imagem.-->
+      </div>
+      <!--A expressão {{chamados}} é uma instrução Jinja que é usada para inserir os dados da variável chamados no template HTML.-->
+ 
+{%endblock%}
